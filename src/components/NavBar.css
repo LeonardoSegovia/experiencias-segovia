@@ -1,0 +1,98 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.menu-top {
+    overflow: hidden;
+    background-color: #333;
+    border: solid #333 1px;
+}
+
+.menu-list a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.menu-list a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.menu-list a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.menu-list {
+    width:30%;
+    display: block;
+    float: left;
+    padding-left: 20%;
+    padding-right: 5%;
+}
+
+.logo-container {
+    float: left;
+    padding: 14px 16px;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-nav a {
+    float: left;
+    display: block;
+    color: black;
+    background-color: #ddd;
+    text-align: center;
+    padding: 14px 16px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+
+}
+
+.menu-nav a:hover {
+    background-color: #333;
+    border: solid #ddd 1px;
+    color: #f2f2f2;
+    padding: 13px 15px;
+}
+
+.menu-login a {
+    float: right;
+    display: block;
+    color: black;
+    background-color: #ddd;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+
+.menu-login a:hover {
+    background-color: #333;
+    border: solid #ddd 1px;
+    color: #f2f2f2;
+    padding: 13px 15px;
+}
+
+.logo-container {
+    padding: 0;
+    background: none;
+    margin-right: 210px;
+}
