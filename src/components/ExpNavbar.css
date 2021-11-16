@@ -1,0 +1,6 @@
+.radius-action {
+    border: solid white 1px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}

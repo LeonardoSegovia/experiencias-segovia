@@ -1,10 +1,11 @@
 import "./App.css";
-import NavBar from "./components/NavBar";
+import ExpNavbar from "./components/ExpNavbar";
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      <ExpNavbar />
+      <br/>
       <h1> Las ofertas de la semana </h1>
     </div>
   );
