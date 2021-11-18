@@ -4,3 +4,8 @@
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
 }
+
+.rigth-apart-action{
+    float:right;
+    margin-left: 50px;
+}

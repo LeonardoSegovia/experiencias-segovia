@@ -1,15 +1,16 @@
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-import logo from "../logo.png";
-import "./ExpNavbar.css"
+import logo from "../../logo.png";
+import "./ExpNavbar.css";
+import CardWidget from "../CardWiget";
 
 const ExpNavbar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand href="#home">
-            <img src={logo} alt="No" />
+          <img src={logo} alt="No" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -22,7 +23,12 @@ const ExpNavbar = () => {
             <Nav.Link href="#libros">Libros</Nav.Link>
           </Nav>
           <Nav className="login-nav">
-            <Nav.Link className="radius-action" href="#login">Login</Nav.Link>
+            <Nav.Link className="radius-action" href="#login">
+              Login
+            </Nav.Link>
+            <Nav.Link href="#shop">
+              <CardWidget />
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
