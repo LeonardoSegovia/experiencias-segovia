@@ -1,8 +1,15 @@
 import "./ItemListContainer.css";
+import ItemCount from "../ItemCount";
 
-const ItemListContainer = ({ items, name }) => {
+const ItemListContainer = ({ items, name , onAdd}) => {
+
   const itemElementList = items.map((elem) => (
-    <div style={({ color: "green" }, { margin: "25px" })}> {elem}</div>
+    <div className="item-container">
+      <div style={({ color: "green" }, { margin: "25px" })}> {elem.name}</div>
+      <ItemCount initial={1} stock={elem.stock} onAdd={onAdd}/>
+      <br/>
+      <hr/>
+    </div>
   ));
   return (
     <div className="list-item-container">
