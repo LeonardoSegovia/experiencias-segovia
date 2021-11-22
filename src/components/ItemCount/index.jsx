@@ -40,6 +40,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
             <FaMinusCircle />
           </Button>
           <FormControl
+            className="counter-increment"
             aria-label="Example text with button addon"
             aria-describedby="basic-addon1"
             value={count}
