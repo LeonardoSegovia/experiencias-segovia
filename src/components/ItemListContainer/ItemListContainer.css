@@ -1,9 +1,8 @@
-.list-item-container > h1{
+.list-item-container>h1 {
     background-color: cadetblue;
 }
 
-.item-container {
-    text-align: left;
-    display: inline-block;
-    width: 100%;
+.list-item-section-container {
+    padding-left: 5%;
+
 }

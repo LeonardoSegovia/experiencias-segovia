@@ -20,40 +20,33 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   };
 
   const onAddItemHandler = () => {
-    if (count <= stock) onAdd(stock,count);
+    if (count <= stock) onAdd(stock, count);
   };
 
   return (
-    <div className="item-buy-container">
-      <div className="buy-action-container">
-        <Button variant="outline-dark" onClick={onAddItemHandler}>
-          <FaCartPlus /> Agregar al carrito
+    <div className="item-count-container">
+      <InputGroup>
+        <Button
+          variant="outline-secondary"
+          id="button-addon1"
+          onClick={decCount}
+        >
+          <FaMinusCircle />
         </Button>
-      </div>
-      <div className="item-count-container">
-        <InputGroup>
-          <Button
-            variant="outline-secondary"
-            id="button-addon1"
-            onClick={decCount}
-          >
-            <FaMinusCircle />
-          </Button>
-          <FormControl
-            className="counter-increment"
-            aria-label="Example text with button addon"
-            aria-describedby="basic-addon1"
-            value={count}
-          />
-          <Button
-            variant="outline-secondary"
-            id="button-addon1"
-            onClick={incCount}
-          >
-            <FaPlusCircle />
-          </Button>
-        </InputGroup>
-      </div>
+        <FormControl
+          className="counter-increment"
+          aria-label="Example text with button addon"
+          aria-describedby="basic-addon1"
+          value={count}
+        />
+        <Button
+          variant="outline-secondary"
+          id="button-addon1"
+          onClick={incCount}
+        >
+          <FaPlusCircle />
+        </Button>
+      </InputGroup>
     </div>
   );
 };
