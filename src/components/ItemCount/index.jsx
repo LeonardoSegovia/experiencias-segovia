@@ -8,7 +8,7 @@ import { FaCartPlus } from "react-icons/fa";
 import React from "react";
 import { useState } from "react";
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ itemId, stock, initial, onAddItemCount }) => {
   const [count, setCount] = useState(initial);
 
   const incCount = () => {
@@ -19,35 +19,42 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     if (count > 0) setCount(count - 1);
   };
 
-  const onAddItemHandler = () => {
-    if (count <= stock) onAdd(stock, count);
+  const onAddCounterHandler = () => {
+    if (count <= stock) onAddItemCount(itemId, count);
   };
 
   return (
-    <div className="item-count-container">
-      <InputGroup>
-        <Button
-          variant="outline-secondary"
-          id="button-addon1"
-          onClick={decCount}
-        >
-          <FaMinusCircle />
+    <>
+      <div className="item-count-container">
+        <InputGroup>
+          <Button
+            variant="outline-secondary"
+            id="button-addon1"
+            onClick={decCount}
+          >
+            <FaMinusCircle />
+          </Button>
+          <FormControl
+            className="counter-increment"
+            aria-label="Example text with button addon"
+            aria-describedby="basic-addon1"
+            value={count}
+          />
+          <Button
+            variant="outline-secondary"
+            id="button-addon1"
+            onClick={incCount}
+          >
+            <FaPlusCircle />
+          </Button>
+        </InputGroup>
+      </div>
+      <div className="buy-action-container">
+        <Button variant="outline-dark" onClick={onAddCounterHandler}>
+          <FaCartPlus /> Agregar al carrito
         </Button>
-        <FormControl
-          className="counter-increment"
-          aria-label="Example text with button addon"
-          aria-describedby="basic-addon1"
-          value={count}
-        />
-        <Button
-          variant="outline-secondary"
-          id="button-addon1"
-          onClick={incCount}
-        >
-          <FaPlusCircle />
-        </Button>
-      </InputGroup>
-    </div>
+      </div>
+    </>
   );
 };
 
