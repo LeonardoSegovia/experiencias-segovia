@@ -17,7 +17,7 @@ function App() {
     ApiMock.getItemList()
       .then((data) => setItemList(data))
       .catch((e) => console.log(e));
-  });
+  },[]);
 
   return (
     <div className="App">

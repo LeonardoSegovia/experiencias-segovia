@@ -66,7 +66,9 @@ const getItemList = () => {
     },
   ];
 
-  return new Promise((resolve) => setTimeout(resolve(itemList),100));
+  return new Promise(function (resolve) {
+    setTimeout(() => resolve(itemList), 2000);
+  });
 };
 
 export const ApiMock = {
