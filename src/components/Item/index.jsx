@@ -1,6 +1,7 @@
 import "./Item.css";
 import Card from "react-bootstrap/Card";
 import ItemCount from "../ItemCount";
+import Button from "react-bootstrap/Button";
 
 const Item = ({
   itemId,
@@ -18,6 +19,9 @@ const Item = ({
       <Card.Body>
         <Card.Title>{itemName}</Card.Title>
         <Card.Text>{description}</Card.Text>
+        <Card.Link>
+          <Button variant="outline-success">Ver detalle</Button>
+        </Card.Link>
         <ItemCount
           initial={initialCount}
           itemId={itemId}

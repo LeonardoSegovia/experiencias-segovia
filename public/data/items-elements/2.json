@@ -1,0 +1,8 @@
+{
+  "itemId": 2,
+  "title": "Item 2",
+  "description": "Description 2: Esta es una descripcion de producto. Obviamente es de prueba.",
+  "imageUrl": "/catalog/Item1.jpg",
+  "stock": 2,
+  "price": 1.1
+}
