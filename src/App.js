@@ -1,42 +1,32 @@
 import "./App.css";
 import ExpNavbar from "./components/ExpNavbar";
-// import ItemListContainer from "./components/ItemListContainer";
-import { ApiMock } from "./ApiMock";
-import { useState, useEffect } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function App() {
-  // const [itemList, setItemList] = useState([]);
-  const [item, setItem] = useState({});
-  // const nameList = "Lista de elementos";
-  const itemId = 2;
+  const defaultCategory = 1;
 
-  // const onAddHandler = (itemId, count) => {
-    // console.log(`Se agregaron ${count} del item ${itemId}`);
-  // };
-
-  // useEffect(() => {
-  //   ApiMock.getItemList()
-  //     .then((data) => setItemList(data))
-  //     .catch((e) => console.log(e));
-  // },[]);
-
-  useEffect(() => {
-    ApiMock.getItem(itemId)
-      .then((res) => setItem(res.data))
-      .catch((e) => console.log("Hubo un error al intentar obtener el detalle."));
-  });
+  const onAddHandler = (itemId, count) => {
+    console.log(`Se agregaron ${count} del item ${itemId}`);
+  };
 
   return (
     <div className="App">
-      <ExpNavbar />
-      <br />
-      <ItemDetailContainer itemProps={item}></ItemDetailContainer>
-      {/* <ItemListContainer
-        name={nameList}
-        items={itemList}
-        onAddListContainer={onAddHandler}
-      /> */}
+      <BrowserRouter>
+        <ExpNavbar />
+        <Switch>
+          <Route exact path="/">
+            <ItemListContainer onAddListContainer={onAddHandler} />
+          </Route>
+          <Route path="/Category/:categoryId">
+            <ItemListContainer onAddListContainer={onAddHandler}/>
+          </Route>
+          <Route path="/Item/:id">
+            <ItemDetailContainer />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

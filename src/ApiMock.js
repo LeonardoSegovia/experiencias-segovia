@@ -5,7 +5,7 @@ const getItemList = () => {
     setTimeout(() => resolve(1), 2000);
   });
 
-  return delayPromise.then((itemId) => {
+  return delayPromise.then(() => {
     return axios.get("/data/Items.json");
   });
 };

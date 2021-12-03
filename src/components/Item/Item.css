@@ -11,3 +11,7 @@
 .buy-action-container {
     float: right;
 }
+
+.card-link{
+    float: left;
+}

@@ -8,6 +8,7 @@ const ItemList = ({ items, onAddList }) => {
       description={item.description}
       stock={item.stock}
       imageUrl={item.imageUrl}
+      category={item.category}
       onAddItem={onAddList}
     />
   ));

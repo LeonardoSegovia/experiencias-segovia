@@ -1,7 +1,7 @@
 import "./Item.css";
 import Card from "react-bootstrap/Card";
 import ItemCount from "../ItemCount";
-import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 const Item = ({
   itemId,
@@ -9,6 +9,7 @@ const Item = ({
   description,
   imageUrl,
   stock,
+  category,
   onAddItem,
 }) => {
   const initialCount = 1;
@@ -18,9 +19,9 @@ const Item = ({
       <Card.Img variant="top" src={imageUrl} />
       <Card.Body>
         <Card.Title>{itemName}</Card.Title>
-        <Card.Text>{description}</Card.Text>
+        <Card.Text>Categoria {category} - {description}</Card.Text>
         <Card.Link>
-          <Button variant="outline-success">Ver detalle</Button>
+          <Link to={`/item/${itemId}`}>Ver detalle </Link>
         </Card.Link>
         <ItemCount
           initial={initialCount}

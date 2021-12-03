@@ -1,24 +1,39 @@
 import { Container, Row, Col } from "react-bootstrap";
+import { useParams } from "react-router";
 import ItemDetail from "../ItemDetail";
 import "./ItemDetailContainer.css";
+import { ApiMock } from "../../ApiMock";
+import { useState, useEffect } from "react";
 
-const ItemDetailContainer = ({ itemProps }) => {
-  console.log(itemProps);
+const ItemDetailContainer = () => {
+  const { id } = useParams();
+  const [item, setItem] = useState();
+
+  useEffect(() => {
+    ApiMock.getItem(id)
+    .then((res) => setItem(res.data))
+    .catch((e) => console.log("Error al obtener el item."));
+  }, [id]);
+
   return (
     <div className="item-detail-internal">
-      {itemProps ? (
+      {item ? (
         <Container>
           <Row>
             <Col>
-              <div className="item-image-container">Proximamente componente de imagenes del item</div>
+              <div className="item-image-container">
+                Proximamente componente de imagenes del item
+              </div>
             </Col>
             <Col md="6">
               <div className="item-main-detail">
-                <ItemDetail item={itemProps} />
+                <ItemDetail item={item} />
               </div>
             </Col>
             <Col>
-              <div className="item-buy-container">Proximamente componente de opciones de compra</div>
+              <div className="item-buy-container">
+                Proximamente componente de opciones de compra
+              </div>
             </Col>
           </Row>
         </Container>
