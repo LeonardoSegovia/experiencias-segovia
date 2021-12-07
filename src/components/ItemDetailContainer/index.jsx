@@ -2,7 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useParams } from "react-router";
 import ItemDetail from "../ItemDetail";
 import "./ItemDetailContainer.css";
-import { ApiMock } from "../../ApiMock";
+import { ApiProducts } from "../../apis/ApiProducts";
 import { useState, useEffect } from "react";
 
 const ItemDetailContainer = () => {
@@ -10,7 +10,8 @@ const ItemDetailContainer = () => {
   const [item, setItem] = useState();
 
   useEffect(() => {
-    ApiMock.getItem(id)
+    console.warn("Product Id", id);
+    ApiProducts.getProduct(id)
     .then((res) => setItem(res.data))
     .catch((e) => console.log("Error al obtener el item."));
   }, [id]);

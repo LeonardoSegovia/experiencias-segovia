@@ -3,7 +3,7 @@ import Item from "../Item";
 const ItemList = ({ items, onAddList }) => {
   const itemElementList = items.map((item) => (
     <Item
-      itemId={item.itemId}
+      itemId={item.id}
       itemName={item.itemName}
       description={item.description}
       stock={item.stock}

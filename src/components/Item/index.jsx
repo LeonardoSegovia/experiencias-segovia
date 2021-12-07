@@ -19,7 +19,7 @@ const Item = ({
       <Card.Img variant="top" src={imageUrl} />
       <Card.Body>
         <Card.Title>{itemName}</Card.Title>
-        <Card.Text>Categoria {category} - {description}</Card.Text>
+        <Card.Text>{category} - {description}</Card.Text>
         <Card.Link>
           <Link to={`/item/${itemId}`}>Ver detalle </Link>
         </Card.Link>
