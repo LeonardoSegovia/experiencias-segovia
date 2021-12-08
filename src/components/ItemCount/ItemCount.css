@@ -6,6 +6,15 @@
 
 }
 
+.item-count-external {
+    width: 12rem;
+    float:right;
+}
+
+.buy-action-container {
+    float: right;
+}
+
 .counter-increment {
     text-align: center;
 }

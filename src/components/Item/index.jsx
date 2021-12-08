@@ -27,7 +27,7 @@ const Item = ({
           initial={initialCount}
           itemId={itemId}
           stock={stock}
-          onAddItemCount={onAddItem}
+          onAdd={onAddItem}
         />
       </Card.Body>
     </Card>

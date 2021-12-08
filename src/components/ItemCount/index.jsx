@@ -8,7 +8,7 @@ import { FaCartPlus } from "react-icons/fa";
 import React from "react";
 import { useState } from "react";
 
-const ItemCount = ({ itemId, stock, initial, onAddItemCount }) => {
+const ItemCount = ({ itemId, stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
 
   const incCount = () => {
@@ -19,12 +19,14 @@ const ItemCount = ({ itemId, stock, initial, onAddItemCount }) => {
     if (count > 0) setCount(count - 1);
   };
 
-  const onAddCounterHandler = () => {
-    if (count <= stock) onAddItemCount(itemId, count);
+  const onAddCounterHandler = (e) => {
+    console.log("onAddCounterHandler",e);
+    e.preventDefault();
+    if (count <= stock) onAdd(itemId, count);
   };
 
   return (
-    <>
+    <div className="item-count-external">
       <div className="item-count-container">
         <InputGroup>
           <Button
@@ -54,7 +56,7 @@ const ItemCount = ({ itemId, stock, initial, onAddItemCount }) => {
           <FaCartPlus /> Agregar al carrito
         </Button>
       </div>
-    </>
+    </div>
   );
 };
 

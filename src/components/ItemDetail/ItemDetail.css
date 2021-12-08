@@ -1,3 +1,7 @@
 .item-detail-card {
     width: 100%;
 }
+
+.item-detail-actions-container{
+    margin: 8rem;
+}

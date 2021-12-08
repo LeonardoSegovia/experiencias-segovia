@@ -10,7 +10,6 @@ const ItemDetailContainer = () => {
   const [item, setItem] = useState();
 
   useEffect(() => {
-    console.warn("Product Id", id);
     ApiProducts.getProduct(id)
     .then((res) => setItem(res.data))
     .catch((e) => console.log("Error al obtener el item."));
