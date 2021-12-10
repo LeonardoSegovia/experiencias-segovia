@@ -1,17 +1,25 @@
 import { Card } from "react-bootstrap";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { CartContext } from "../CartContext/CartContext";
 
 const ItemDetail = (itemProps) => {
   const [itemAdded, setItemAdded] = useState(false);
+  const [items, addItem] = useContext(CartContext);
 
-  function onAdd(itemId, itemsCount) {
+  // function onAdd(itemId, itemsCount) {
+  //   console.log("Se genero el evento onAdd", itemsCount, " itemId ", itemId);
+  //   setItemAdded(true);
+  // }
+
+  const onAdd = (itemId, itemsCount) => {
     console.log("Se genero el evento onAdd", itemsCount, " itemId ", itemId);
-    setItemAdded(true);
-  }
+    setItemAdded(false);
+    addItem(itemId, itemProps.description, itemsCount);
+  };
 
   return (
     <Card className="item-detail-card">
