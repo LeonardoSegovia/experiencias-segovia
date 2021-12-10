@@ -6,18 +6,16 @@ export const CartProvider = ({ children }) => {
   const [items, setItems] = useState([]);
 
   const addItem = (itemId, itemDesc, itemCount) => {
-
+    console.log("items", items);
+    let currentItems = items;
     if (!isInCart(itemId)) {
-      setItems([...items, { itemId, itemDesc, itemCount }]);
+      setItems([{ itemId, itemDesc, itemCount }, ...items]);
     } else {
-      setItems(
-        items
-          .filter((e) => e.id === itemId)
-          .map((i) => (i.itemCount += itemCount))
-      );
+      currentItems = items
+        .filter((e) => e.itemId === itemId)
+        .map((i) =>  {i.itemCount += itemCount; return i;});
+      setItems(currentItems);
     }
-
-    console.log(items);
   };
 
   const isInCart = (id) => {
