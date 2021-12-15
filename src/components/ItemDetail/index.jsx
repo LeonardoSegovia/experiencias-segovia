@@ -10,15 +10,10 @@ const ItemDetail = (itemProps) => {
   const [itemAdded, setItemAdded] = useState(false);
   const [items, addItem] = useContext(CartContext);
 
-  // function onAdd(itemId, itemsCount) {
-  //   console.log("Se genero el evento onAdd", itemsCount, " itemId ", itemId);
-  //   setItemAdded(true);
-  // }
-
   const onAdd = (itemId, itemsCount) => {
-    console.log("Se genero el evento onAdd", itemsCount, " itemId ", itemId);
-    setItemAdded(false);
-    addItem(itemId, itemProps.description, itemsCount);
+    console.log("add: ", itemProps)
+    setItemAdded(true);
+    addItem(itemId, itemProps.item.description, itemProps.item.price, itemsCount);
   };
 
   return (

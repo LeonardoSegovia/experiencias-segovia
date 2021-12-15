@@ -9,3 +9,8 @@
     float:right;
     margin-left: 50px;
 }
+
+.nav-link {
+    color: darkgray;
+    text-decoration: none;
+  }

@@ -21,7 +21,7 @@ const Item = ({
         <Card.Title>{itemName}</Card.Title>
         <Card.Text>{category} - {description}</Card.Text>
         <Card.Link>
-          <Link to={`/item/${itemId}`}>Ver detalle </Link>
+          <Link className="link" to={`/item/${itemId}`} style={{"textDecoration":"none"}}> Ver detalle </Link>
         </Card.Link>
         <ItemCount
           initial={initialCount}
